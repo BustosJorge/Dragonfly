@@ -1,0 +1,54 @@
+Designator Footprint               Mid X         Mid Y         Ref X         Ref Y         Pad X         Pad Y TB      Rotation Comment        
+
+R18        RESC1608X55N          1065mil       -175mil       1065mil       -175mil       1065mil   -206.496mil  T         90.00 10K            
+R17        RESC1608X55N           -75mil       -585mil        -75mil       -585mil    -43.504mil       -585mil  T        180.00 1K             
+R16        RESC1608X55N           -75mil       -505mil        -75mil       -505mil    -43.504mil       -505mil  T        180.00 100k           
+Q2         SOT96P240X110-3N       -255mil       -545mil       -255mil       -545mil   -213.661mil   -582.795mil  T        180.00 DMP3125L-7     
+D12        SOD2512X110N          -820mil        460mil       -820mil        460mil   -865.276mil        460mil  T        360.00 1PS76SB10,115  
+D11        SOD2512X110N      -169.724mil        275mil   -169.724mil        275mil   -124.449mil        275mil  T        180.00 1PS76SB10,115  
+C7         CAPC1608X90N           695mil       -130mil        695mil       -130mil        695mil   -157.559mil  T         90.00 100nF          
+C6         CAPC1608X90N            20mil        790mil         20mil        790mil     -7.559mil        790mil  T        360.00 10uF           
+C5         CAPC1608X90N            25mil        390mil         25mil        390mil     -2.559mil        390mil  T        360.00 10uF           
+LED1       LEDC1608X60N           -30mil        885mil        -30mil        885mil      3.465mil        885mil  B        180.00 LTST-C191TBKT-5A
+R14        RESC1608X55N          -100mil        790mil       -100mil        790mil    -68.504mil        790mil  T        180.00 1K             
+C3         CAPC1608X90N       120.669mil       -345mil    120.669mil       -345mil      93.11mil       -345mil  T        360.00 22pF           
+C2         CAPC1608X90N       120.669mil       -115mil    120.669mil       -115mil      93.11mil       -115mil  T        360.00 22pF           
+C1         CAPC1608X90N          -260mil         80mil       -260mil         80mil       -260mil     52.441mil  T         90.00 22uF           
+Y1         ECS1601037JGPTR    120.669mil   -231.575mil    120.669mil   -231.575mil        100mil       -205mil  T        270.00 ECS-160-10-37-JGP-TR
+R3         RESC1608X55N           -90mil        390mil        -90mil        390mil    -58.504mil        390mil  T        180.00 10K            
+R2         RESC1608X55N          -375mil        -25mil       -375mil        -25mil   -343.504mil        -25mil  T        180.00 4.7K           
+R1         RESC1608X55N          -375mil        110mil       -375mil        110mil   -406.496mil        110mil  T          0.00 33K            
+ICSP       HDR2X3                 825mil       -310mil        725mil       -360mil        725mil       -360mil  T        360.00 Header 3X2     
+IC2        QFP80P900X900X120-32N        430mil       -130mil        430mil       -130mil     263.15mil    -19.764mil  T          0.00 ATMEGA328PB-AN 
+P1         HDR1X4                 430mil        280mil        580mil        280mil        580mil        280mil  T        180.00 Header 4       
+BAT        HDR1X2                  15mil       1050mil         65mil       1050mil         65mil       1050mil  T        180.00 Header 2       
+V_IN       HDR1X2               -1025mil        260mil      -1025mil        310mil      -1025mil        310mil  T        270.00 Header 2       
+D1         LED_5mm               -795mil       -405mil       -795mil       -355mil       -795mil       -355mil  T          0.00 LED GREAN      
+D2         LED_5mm               -200mil       -210mil       -200mil       -160mil       -200mil       -160mil  T          0.00 LED GREAN      
+D3         LED_5mm                185mil       -680mil        185mil       -630mil        185mil       -630mil  T          0.00 LED GREAN      
+D4         LED_5mm                830mil        610mil        830mil        560mil        830mil        560mil  T        180.00 LED GREAN      
+D5         LED_5mm               -265mil        980mil       -265mil       1030mil       -265mil       1030mil  T          0.00 LED GREAN      
+D6         LED_5mm                865mil       -555mil        865mil       -605mil        865mil       -605mil  T        180.00 LED GREAN      
+D7         LED_5mm                215mil        795mil        215mil        845mil        215mil        845mil  T          0.00 LED GREAN      
+D8         LED_5mm               -285mil       -980mil       -285mil       -930mil       -285mil       -930mil  T          0.00 LED GREAN      
+D9         LED_5mm              -1035mil         30mil      -1035mil        -20mil      -1035mil        -20mil  T        180.00 LED GREAN      
+D10        LED_5mm                885mil          5mil        885mil         55mil        885mil         55mil  T          0.00 LED GREAN      
+R4         RESC1608X55N          -575mil       -350mil       -575mil       -350mil   -606.496mil       -350mil  T        360.00 1K             
+R5         RESC1608X55N           -30mil       -150mil        -30mil       -150mil    -61.496mil       -150mil  T        360.00 1K             
+R6         RESC1608X55N           325mil       -600mil        325mil       -600mil        325mil   -631.496mil  T         90.00 1K             
+R7         RESC1608X55N           845mil        380mil        845mil        380mil        845mil    411.496mil  T        270.00 1K             
+R8         RESC1608X55N          -385mil        850mil       -385mil        850mil       -385mil    881.496mil  T        270.00 1K             
+R9         RESC1608X55N           740mil       -745mil        740mil       -745mil    771.496mil       -745mil  T        180.00 1K             
+R10        RESC1608X55N           365mil        855mil        365mil        855mil    333.504mil        855mil  T        360.00 1K             
+R11        RESC1608X55N          -355mil       -825mil       -355mil       -825mil       -355mil   -856.496mil  T         90.00 1K             
+R12        RESC1608X55N         -1000mil       -150mil      -1000mil       -150mil  -1031.496mil       -150mil  T        360.00 1K             
+R13        RESC1608X55N           845mil        170mil        845mil        170mil    876.496mil        170mil  T        180.00 1K             
+IC3        SOT95P280X145-6N       -355mil        225mil       -355mil        225mil   -404.213mil    262.402mil  T          0.00 MT3608         
+IC4        SOIC127P600X175-9N        -35mil        600mil        -35mil        600mil       -110mil    493.228mil  T         90.00 TC4056A        
+C4         CAPC1608X90N          -120mil        175mil       -120mil        175mil       -120mil    147.441mil  T         90.00 22uF           
+L1         INDPM110100X400N       -670mil        115mil       -670mil        115mil       -670mil    -62.165mil  T         90.00 SRP1038CC-220M 
+R15        RESC1608X55N          -300mil        510mil       -300mil        510mil   -268.504mil        510mil  T        180.00 33K            
+SW         HDR1X4            -798.934mil    676.066mil       -905mil        570mil       -905mil        570mil  T         45.00 Header 4       
+Q1         SOT96P240X110-3N       -305mil        630mil       -305mil        630mil   -263.661mil    592.205mil  T        180.00 DMP3125L-7     
+C8         CAPC1608X90N           135mil        -15mil        135mil        -15mil        135mil    -42.559mil  T         90.00 1uF            
+
