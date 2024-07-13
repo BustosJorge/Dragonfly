@@ -14,7 +14,7 @@ unsigned long interval_off = MAX_OFF;
 unsigned long interval_on = MAX_ON;
 
 unsigned long currentMillis = 0;
-int leds[] ={13,2,3,4,5};//en lista el numero de pin de los leds que se van a utiliar
+int leds[] ={2,3,4,5,6,7,9,17,18,19};//en lista el numero de pin de los leds que se van a utiliar
 unsigned long status[]={0,interval_off,interval_on,0};//[ESTADO,T_OFF, T_ON,T_ANTERIOR]
 unsigned long LED_status[sizeof(leds)][5];//[No. led][ESTADO,T_OFF, T_ON,T_ANTERIOR]
 void setup() {
@@ -60,3 +60,4 @@ void Luciernaga_array(void){
         digitalWrite(leds[i], LED_status[i][ESTADO]);
     }
 }
+
