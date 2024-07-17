@@ -23,31 +23,32 @@ Once the assembly is finished, it is charged with a USB type C cable, the switch
 
 ## Example Code
 ```cpp
-#define ESTADO 0
-#define T_OFF 1
-#define T_ON 2
-#define T_ANTERIOR 3
+//Defines the position of the element within the status array
+#define STATE 0
+#define TIME_OFF 1
+#define TIME_ON 2
+#define TIME_PREVIOUS 3
 
-//Rango de los intervalos para encendido y apagado
+//Interval range for on and off
 unsigned long MAX_OFF = 9000;
 unsigned long MIN_OFF = 2000;
 unsigned long MAX_ON = 400;
 unsigned long MIN_ON = 200;
-//Intervalos por defecto
+//Default intervals
 unsigned long interval_off = MAX_OFF;
 unsigned long interval_on = MAX_ON;
 
 unsigned long currentMillis = 0;
-int leds[] ={13,2,3,4,5};//en lista el numero de pin de los leds que se van a utiliar
-unsigned long status[]={0,interval_off,interval_on,0};//[ESTADO,T_OFF, T_ON,T_ANTERIOR]
-unsigned long LED_status[sizeof(leds)][5];//[No. led][ESTADO,T_OFF, T_ON,T_ANTERIOR]
+int leds[] ={2,3,4,5,6,7,9,17,18,19};//List the pin number of the LEDs that will be used
+unsigned long status[]={LOW,interval_off,interval_on,0};//[STATE,TIME_OFF, TIME_ON,TIME_PREVIOUS]
+unsigned long LED_status[sizeof(leds)][5];//[No. led][STATE,TIME_OFF, TIME_ON,TIME_PREVIOUS]
 void setup() {
-  //configura la lista de leds como salida
+  //configure led list as output
   for (int i = 0; i < sizeof(leds); i++){
      pinMode(leds[i], OUTPUT);
   }
 
-  //se rellena la matriz de led con los datos por defecto
+  //the LED matrix is ​​filled with the default data
   for (int i = 0; i < sizeof(leds); i++){
     for(int j; j < 4; j++){
       LED_status[i][j]=status[j];
@@ -59,44 +60,65 @@ void loop() {
   // put your main code here, to run repeatedly:
   currentMillis = millis();
   Luciernaga_array();
+
 }
 
 void Luciernaga_array(void){
-//Revisa el estado de cada uno de los led y actualiza sus estados
+//Check the status of each of the LEDs and update their statuses
     for (int i = 0; i < sizeof(leds); i++){
 
-        if (currentMillis - LED_status[i][T_ANTERIOR] >= LED_status[i][T_OFF] && LED_status[i][ESTADO] == LOW) {
+        if (currentMillis - LED_status[i][TIME_PREVIOUS] >= LED_status[i][TIME_OFF] && LED_status[i][STATE] == LOW) {
         // save the last time you blinked the LED
-          LED_status[i][T_ANTERIOR] = currentMillis;
-          LED_status[i][ESTADO]=1;
-          LED_status[i][T_ON] = random(MIN_ON,MAX_ON);
+          LED_status[i][TIME_PREVIOUS] = currentMillis;
+          LED_status[i][STATE]=HIGH;
+          LED_status[i][TIME_ON] = random(MIN_ON,MAX_ON);
         }
 
-        else if (currentMillis - LED_status[i][T_ANTERIOR] >= LED_status[i][T_ON] && LED_status[i][ESTADO] == HIGH) {
-            LED_status[i][T_ANTERIOR] = currentMillis;
-            LED_status[i][ESTADO]=0;
-            LED_status[i][T_OFF] = random(MIN_OFF, MAX_OFF);
+        else if (currentMillis - LED_status[i][TIME_PREVIOUS] >= LED_status[i][TIME_ON] && LED_status[i][STATE] == HIGH) {
+            LED_status[i][TIME_PREVIOUS] = currentMillis;
+            LED_status[i][STATE]=LOW;
+            LED_status[i][TIME_OFF] = random(MIN_OFF, MAX_OFF);
         }
 
         // set the LED with the ledState of the variable:
-        digitalWrite(leds[i], LED_status[i][ESTADO]);
+        digitalWrite(leds[i], LED_status[i][STATE]);
     }
 }
-
 ```
 
 ## Components
-10 LEDs SMD 0603 (for fireflies)
-Jumper wires
-1 PCB base
-1 PCB Dragonfly
-1 Contacto USB Type C Power supply (5V)
-1 Lithium polymer (Li-Po) battery (400 mAh)
-1 2P2T switch
-4 M3 screws
-3D-printed base
+| Element | Description | Decignator  | Quanty |
+| ------- | ----------- | ----------- | ------ |
+| Battery | Li-Po battery 400 mAh | BAT | 1 |
+| 22uF | Capacitor | C1, C4 | 2 |
+| 22pF | Capacitor | C2, C3 | 2 |
+| 10uF | Capacitor | C5, C6 | 2 |
+| 100nF | Capacitor | C7 | 1 |
+| 1uF | Capacitor | C8 | 1 |
+|LED GREAN |Typical GREAN LED| D1, D2, D3, D4, D5, D6, D7, D8, D9, D10| 10 |
+| 1PS76SB10,115 | Schottky Diode | D11, D12 | 2 |
+| ATMEGA328PB-AN | Integrated Circuit | IC2 | 1 |
+| MT3608 | Integrated Circuit | IC3 | 1 |
+| TC4056A | Integrated Circuit | IC4 | 1 |
+| SRP1038CC-220M | Inductor | L1 | 1 |
+| LTST-C191TBKT-5A | LED | LED1 | 1 |
+| DMP3125L-7 | MOSFET (P-Channel) | Q1, Q2 | 2 |
+| 33K | Resistor | R1, R15 | 2 |
+| 4.7K | Resistor | R2 | 1 |
+| 10K | Resistor | R3, R18 | 2 |
+| 1K | Resistor | R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R17 | 12 |
+| 100k | Resistor | R16 | 1 |
+| SW | 2P2T SWITCH, 2 POLES 2 THROWS | SW | 1 |
+| Type C female connector | USB Type C 2 Pins Connector Jack Female Type-C 3A 30V Oval with Wire Current Fast Charging Jacker Port USB-C Charger Plug Socket | V_IN | 1 |
+| ECS-160-10-37-JGP-TR | Crystal or Oscillator | Y1 | 1 |
+
 
 ## Circuit Diagram
+![PCB base 1](/PCBs/PCB_Luciernagas/Schematic_PCB_base_1_2.jpg)
+![PCB base 2](/PCBs/PCB_Luciernagas/Schematic_PCB_base_2_2.jpg)
+![PCB base](/PCBs/PCB_Luciernagas/PCB_FIREFLYS.jpg)
+![PCB dragonfly](/PCBs/PCB_Libelula/DRAGONFLY.jpg)
+[PDF PCB base](/PCBs/PCB_Luciernagas/PCB_Luciernagas.pdf)
 
 ## Assembly Instructions
 1. Connect the electronic components as per the provided circuit diagram on PCB base (exept USB conector,switch and battery).
