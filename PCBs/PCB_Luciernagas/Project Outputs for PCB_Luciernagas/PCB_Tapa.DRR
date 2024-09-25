@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: PCB_Tapa.PcbDoc   11/07/2024  07:49:50 p. m.
+NCDrill File Report For: PCB_Tapa.PcbDoc   24/09/2024  03:20:57 p. m.
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,7 +7,7 @@ ASCII RoundHoles File : PCB_Tapa.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      16mil (0.399mm)                                           Round             16        PTH        3.62inch (92.02mm)
+T1      16mil (0.399mm)                                           Round             16        PTH        3.60inch (91.55mm)
 T2      28mil (0.711mm)                                           Round             1         PTH        0.00inch (0.00mm)
 T3      35mil (0.899mm)                                           Round             43        PTH        14.37inch (364.98mm)
 T4      138mil (3.5mm)                                            Round             4         PTH        3.54inch (90.00mm)
