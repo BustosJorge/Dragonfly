@@ -1,8 +1,13 @@
+#include <EEPROM.h>
+
 // Defines the position of the element within the status array
 #define STATE 0
 #define TIME_OFF 1
 #define TIME_ON 2
 #define TIME_PREVIOUS 3
+
+int currentState = 0; // Current status
+
 /*Fireflys variables*/
 // Interval range for on and off
 unsigned long MAX_OFF = 9000;
@@ -35,6 +40,24 @@ const int period = 100;
 
 void setup()
 {
+  
+  // Read the current status of the EEPROM
+  currentState = EEPROM.read(0);
+
+  // Validate the status range
+  if (currentState < 0 || currentState > 2)
+  {
+    currentState = 0;
+  }
+
+  // Increase status for next cycle
+  currentState = (currentState + 1) % 3;
+
+  // Save the new state to EEPROM
+  EEPROM.write(0, currentState);
+  
+  
+  
   // configure led list as output
   for (int i = 0; i < sizeof(leds); i++)
   {
@@ -57,8 +80,19 @@ void loop()
 {
   // put your main code here, to run repeatedly:
   currentMillis = millis();
-  fireflay_array();
-  simulationPWM(dragonflay, upDownDutyCyle());
+  if (currentState == 0)
+  {
+    fireflay_array(); // Solo ejecuta fireflay_array()
+  }
+  else if (currentState == 1)
+  {
+    simulationPWM(dragonflay, upDownDutyCyle()); // Solo ejecuta simulationPWM()
+  }
+  else if (currentState == 2)
+  {
+    fireflay_array(); // Ejecuta ambas funciones
+    simulationPWM(dragonflay, upDownDutyCyle());
+  }
 }
 
 void fireflay_array(void)
