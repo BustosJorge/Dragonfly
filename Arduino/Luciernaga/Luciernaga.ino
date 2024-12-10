@@ -11,9 +11,9 @@ int currentState = 0; // Current status
 /*Fireflys variables*/
 // Interval range for on and off
 unsigned long MAX_OFF = 9000;
-unsigned long MIN_OFF = 2000;
-unsigned long MAX_ON = 400;
-unsigned long MIN_ON = 200;
+unsigned long MIN_OFF = 4000;
+unsigned long MAX_ON = 600;
+unsigned long MIN_ON = 400;
 // Default intervals
 unsigned long interval_off = MAX_OFF;
 unsigned long interval_on = MAX_ON;
@@ -82,11 +82,12 @@ void loop()
   currentMillis = millis();
   if (currentState == 0)
   {
-    fireflay_array(); // Solo ejecuta fireflay_array()
+    fireflay_array();
+    digitalWrite(dragonflay, HIGH); // OFF dragonfly mosfet P
   }
   else if (currentState == 1)
   {
-    simulationPWM(dragonflay, upDownDutyCyle()); // Solo ejecuta simulationPWM()
+    simulationPWM(dragonflay, upDownDutyCyle()); 
   }
   else if (currentState == 2)
   {
